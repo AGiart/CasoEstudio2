@@ -8,6 +8,7 @@ public class MeleeController : MonoBehaviour
     [SerializeField]
     Transform[] attackPoints;
 
+
     [SerializeField]
     float japDamage;
 
@@ -64,10 +65,12 @@ public class MeleeController : MonoBehaviour
         _animator.ResetTrigger(ANIMATION_ATTACK);
     }
 
-    private Transform GetAttackpoint(string name)
+   private Transform GetAttackpoint(string name)
     {
+
         foreach (Transform attackPoint in attackPoints)
         {
+
             if (attackPoint.name == name)
             {
                 return attackPoint;
@@ -76,12 +79,14 @@ public class MeleeController : MonoBehaviour
         return null;
     }
 
-    public void OnJap()
+    public void attackTrigger()
     {
         _japSequence++;
+
         Transform attackPoint = GetAttackpoint("Jap " + _japSequence.ToString());
         if (attackPoint != null)
         {
+            Debug.Log("golpenado");
             Collider[] colliders = Physics.OverlapSphere(attackPoint.position, 0.15F);
             foreach(Collider collider in colliders)
             {
@@ -90,8 +95,10 @@ public class MeleeController : MonoBehaviour
                 {
                     continue;
                 }
+
                 damageable.TakeDamage(japDamage);
             }
         }
     }
+
 }

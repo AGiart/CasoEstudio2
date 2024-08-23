@@ -18,9 +18,12 @@ public class FollowAndRetreatAI : MonoBehaviour
 
     Rigidbody _rigidbody;
 
+
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+
     }
 
     private void FixedUpdate()
@@ -40,6 +43,7 @@ public class FollowAndRetreatAI : MonoBehaviour
         else if (distance < stopDistance && distance > retreatDistance)
         {
             _rigidbody.position = this._rigidbody.position;
+
         }
 
         transform.LookAt(target.position);
