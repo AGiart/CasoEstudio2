@@ -86,7 +86,7 @@ public class MeleeController : MonoBehaviour
         Transform attackPoint = GetAttackpoint("Jap " + _japSequence.ToString());
         if (attackPoint != null)
         {
-            Debug.Log("golpenado");
+            
             Collider[] colliders = Physics.OverlapSphere(attackPoint.position, 0.15F);
             foreach(Collider collider in colliders)
             {

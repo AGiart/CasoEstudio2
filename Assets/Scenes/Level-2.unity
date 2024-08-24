@@ -5426,6 +5426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac75240f00a9f24a9d08a1b3f1fa351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 100
 --- !u!136 &1688701414
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6257,6 +6258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac75240f00a9f24a9d08a1b3f1fa351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 100
 --- !u!136 &1933949962
 CapsuleCollider:
   m_ObjectHideFlags: 0
