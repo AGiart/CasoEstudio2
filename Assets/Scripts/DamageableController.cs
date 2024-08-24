@@ -4,10 +4,29 @@ using UnityEngine;
 
 public class DamageableController : MonoBehaviour
 {
-    //manejar vida
+    [SerializeField]
+    private float vida = 100f;  
+
+    private HealthController healthController;
+
+    private void Awake()
+    {
+        healthController = GetComponent<HealthController>();
+        if (healthController != null)
+        {
+            healthController.SetMaxHealth(vida);
+        }
+    }
+
     public void TakeDamage(float damage)
     {
-        
-        //Destroy(gameObject);
+        vida -= damage;  
+
+        if (healthController != null)
+        {
+            healthController.DecreaseHealth(damage); 
+        }
+
+       
     }
 }

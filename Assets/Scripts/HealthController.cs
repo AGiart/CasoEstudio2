@@ -55,4 +55,13 @@ public class HealthController : MonoBehaviour
         _currentHealth += GetHealth(value, percentage, 1);
         UpdateSlider();
     }
+
+    public void SetMaxHealth(float maxHealth)
+    {
+        this.maxHealth = maxHealth;
+        _currentHealth = maxHealth;
+        slider.maxValue = maxHealth;
+        slider.value = _currentHealth;
+    }
+
 }
