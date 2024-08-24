@@ -63,5 +63,12 @@ public class HealthController : MonoBehaviour
         slider.maxValue = maxHealth;
         slider.value = _currentHealth;
     }
+    public void die()
+    {
+        if (_currentHealth == 0)
+        {
+            GameObject.Destroy(gameObject);
+        }
+    }
 
 }

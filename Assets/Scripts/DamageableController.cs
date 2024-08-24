@@ -27,6 +27,12 @@ public class DamageableController : MonoBehaviour
             healthController.DecreaseHealth(damage); 
         }
 
-       
+        if (vida <= 0) 
+        {
+
+            Destroy(gameObject);
+        }
+        
+
     }
 }
